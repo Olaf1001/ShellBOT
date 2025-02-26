@@ -3,7 +3,7 @@
 #include <string.h>
 #include <curl/curl.h>
 #include "api.h"
-#include "res_parser.h"
+#include "json_parser.h"
 
 void send_query(char *prompt) {
     CURL *curl;

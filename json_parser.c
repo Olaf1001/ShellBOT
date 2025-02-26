@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <cjson/cJSON.h>
-#include "res_parser.h"
+#include "json_parser.h"
 
 int parse_and_print_response(void *response, int size, int n) {
     int total_size = size * n;
