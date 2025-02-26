@@ -3,20 +3,20 @@
 #include "api.h"
 
 int main() {
-    char user_input[256];
+    char userInput[256];
 
     printf("Enter the message to the chatbot: (press q or type exit to quit):\n");
     while (1) {
-        printf(">> ");
-        fgets(user_input, sizeof(user_input), stdin);
+        printf("> ");
+        fgets(userInput, sizeof(userInput), stdin);
 
-        user_input[strcspn(user_input, "\n")] = 0;
+        userInput[strcspn(userInput, "\n")] = 0;
 
-        if (strcmp(user_input, "exit") == 0 || strcmp(user_input, "q") == 0) {
+        if (strcmp(userInput, "exit") == 0 || strcmp(userInput, "q") == 0) {
             break;
         }
 
-        send_query(user_input);
+        send_query(userInput);
     }
 
     return 0;
