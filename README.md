@@ -96,12 +96,6 @@ Chatbot: The capital of France is Paris.
 
 ---
 
-## **License**
-
-See the `LICENSE` file for the terms and conditions of using or distributing this code.
-
----
-
 ## **Author**
 
 - **Olaf Naruszko**
