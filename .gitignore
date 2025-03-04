@@ -1,2 +1,5 @@
 .vscode
-chatbot
+shellbot
+main.o
+api.o
+json_parser.o

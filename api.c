@@ -5,6 +5,8 @@
 #include "api.h"
 #include "json_parser.h"
 
+char* API_ENDPOINT = "http://localhost:8080/v1/completions";
+
 void send_query(char *prompt) {
     CURL *curl;
     CURLcode res;
@@ -12,7 +14,6 @@ void send_query(char *prompt) {
     curl = curl_easy_init();
 
     if (curl) {
-        char *url = "http://localhost:8080/v1/completions";
         char post_data[512];
 
         snprintf(post_data, sizeof(post_data),
@@ -22,7 +23,7 @@ void send_query(char *prompt) {
         struct curl_slist *headers = NULL;
         headers = curl_slist_append(headers, "Content-Type: application/json");
 
-        curl_easy_setopt(curl, CURLOPT_URL, url); // Set url address for http request
+        curl_easy_setopt(curl, CURLOPT_URL, API_ENDPOINT); // Set url address for http request
         curl_easy_setopt(curl, CURLOPT_POST, 1L); // Set POST method instead of GET
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post_data); // Set post_data
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers); // Set HTTP headers
